@@ -1,0 +1,21 @@
+# Cloud Migration Checklist
+
+- [ ] Rent GPU instance
+- [ ] Install Docker
+- [ ] Install Ollama
+- [ ] Upload GGUF models
+- [ ] Create Ollama Modelfiles
+- [ ] Register coding model
+- [ ] Register reasoning model
+- [ ] Register vision model
+- [ ] Start Ollama
+- [ ] Start Vibe Coding Gateway
+- [ ] Configure cloud API endpoint
+- [ ] Configure Aider
+- [ ] Configure Continue
+- [ ] Configure OpenWebUI
+- [ ] Enable authentication
+- [ ] Configure firewall
+- [ ] Verify health endpoints
+- [ ] Verify routing
+- [ ] Verify fallback behavior

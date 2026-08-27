@@ -1,0 +1,11 @@
+# Devstral multimodal model
+#
+# Main model:
+# Devstral-Small-2-24B-Instruct-2512
+#
+# Vision projector:
+# mmproj-Devstral-Small-2-24B-Instruct-2512-F16.gguf
+#
+# The exact Ollama registration command will be completed on the
+# cloud GPU after verifying the downloaded model's architecture
+# and Ollama compatibility.

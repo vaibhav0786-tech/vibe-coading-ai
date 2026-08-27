@@ -1,0 +1,5 @@
+# Aider configuration for Vibe Coding AI
+# Cloud endpoint will be configured later.
+
+model: openai/your-cloud-model
+openai-api-base: http://127.0.0.1:8000/v1

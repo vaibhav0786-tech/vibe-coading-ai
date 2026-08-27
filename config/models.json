@@ -1,0 +1,14 @@
+{
+  "coding": {
+    "provider": "ollama",
+    "model": "vibe-coder"
+  },
+  "reasoning": {
+    "provider": "ollama",
+    "model": "vibe-reasoner"
+  },
+  "vision": {
+    "provider": "ollama",
+    "model": "vibe-vision"
+  }
+}
