@@ -32,17 +32,17 @@ class Settings:
 
     coding_model: str = os.getenv(
         "CODING_MODEL",
-        "deepseek-coder-local",
+        "qwen2.5-coder:7b",
     )
 
     reasoning_model: str = os.getenv(
         "REASONING_MODEL",
-        "qwen3-thinking-local",
+        "qwen2.5-coder:7b",
     )
 
     vision_model: str = os.getenv(
         "VISION_MODEL",
-        "devstral-vision-local",
+        "qwen2.5-coder:7b",
     )
 
     request_timeout_seconds: int = int(

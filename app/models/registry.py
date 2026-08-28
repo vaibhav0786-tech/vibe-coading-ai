@@ -11,7 +11,7 @@ class ModelDefinition:
 
 MODELS = {
     "coding": ModelDefinition(
-        name="deepseek-coder-local",
+        name="qwen2.5-coder:7b",
         role="coding",
         capabilities=(
             "code_generation",
@@ -20,9 +20,8 @@ MODELS = {
             "refactoring",
         ),
     ),
-
     "reasoning": ModelDefinition(
-        name="qwen3-thinking-local",
+        name="qwen2.5-coder:7b",
         role="reasoning",
         capabilities=(
             "reasoning",
@@ -30,15 +29,10 @@ MODELS = {
             "analysis",
         ),
     ),
-
     "vision": ModelDefinition(
-        name="devstral-vision-local",
+        name="qwen2.5-coder:7b",
         role="vision",
-        capabilities=(
-            "image_analysis",
-            "multimodal",
-            "visual_coding",
-        ),
+        capabilities=(),
         enabled=False,
     ),
 }
@@ -47,10 +41,10 @@ MODELS = {
 def get_model(task_type: str) -> ModelDefinition:
     try:
         model = MODELS[task_type]
-    except KeyError:
+    except KeyError as exc:
         raise ValueError(
             f"Unknown task type: {task_type}"
-        )
+        ) from exc
 
     if not model.enabled:
         raise RuntimeError(

@@ -1,3 +1,5 @@
+import pytest
+
 from app.routing.router import route_request
 
 
@@ -7,7 +9,7 @@ def test_code_routes_to_coding_model():
     )
 
     assert decision.task_type == "coding"
-    assert decision.model.name == "deepseek-coder-local"
+    assert decision.model.name == "qwen2.5-coder:7b"
 
 
 def test_reasoning_routes_to_reasoning_model():
@@ -16,17 +18,14 @@ def test_reasoning_routes_to_reasoning_model():
     )
 
     assert decision.task_type == "reasoning"
-    assert decision.model.name == "qwen3-thinking-local"
+    assert decision.model.name == "qwen2.5-coder:7b"
 
 
-def test_disabled_vision_model_fails_safely():
-    try:
+def test_vision_is_disabled_until_vision_model_is_installed():
+    with pytest.raises(
+        RuntimeError,
+        match="Model for task 'vision' is disabled",
+    ):
         route_request(
-            "Analyze this screenshot"
-        )
-    except RuntimeError as error:
-        assert "vision" in str(error).lower()
-    else:
-        raise AssertionError(
-            "Expected disabled vision model to raise RuntimeError"
+            "Analyze this screenshot and explain what is wrong"
         )

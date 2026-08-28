@@ -1,14 +1,15 @@
 {
   "coding": {
     "provider": "ollama",
-    "model": "vibe-coder"
+    "model": "qwen2.5-coder:7b"
   },
   "reasoning": {
     "provider": "ollama",
-    "model": "vibe-reasoner"
+    "model": "qwen2.5-coder:7b"
   },
   "vision": {
     "provider": "ollama",
-    "model": "vibe-vision"
+    "model": null,
+    "enabled": false
   }
 }
